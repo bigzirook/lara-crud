@@ -1,0 +1,78 @@
+
+table p, table th, table td, table li{
+	font-size: 14px;
+	color: #3b3466;
+}
+
+/***********font-style**************/
+
+.font-italic{
+	font-style: italic;
+}
+
+/***************main-body**************/
+.main-body{
+	padding:20px;
+}
+
+/**********heading************/
+ .heading-top h4{
+ 	background-color: #3b3466;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 50px;
+    border-radius: 8px;
+ }
+ .heading-top{
+ 	text-align: center;
+ }
+
+/************table************/
+.table-head{
+	background-color: #ecebf5;
+	color: #3b3466;
+}
+table{
+	color: #3b3466;
+}
+table td, table th{
+	/*color: #3b3466;*/
+	padding: 4px 10px !important;
+}
+.table-bordered>:not(caption)>*>* {
+    border: 1px solid #000 !important;
+}
+/********checkbox*********/
+table .form-check-input[type=checkbox]{
+	border-radius: 0;
+	border-color: #3b3466;
+	box-shadow: 0 0px 2px #3b3466;
+}
+
+
+/***************table-listing*************/
+.table-listing li{
+	list-style: decimal;
+}
+
+.important-listing li{
+	list-style: none;
+
+}
+.important-listing{
+	font-style: italic;
+}
+
+
+/*****btn******/
+
+
+.btn-theme{
+	 background-color: #3b3466;
+	 color: #fff;
+	 border: 1px solid #3b3466;
+}
+.btn-theme:hover{
+	 background-color: #fff;
+	 color: #3b3466;
+}
