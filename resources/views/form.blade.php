@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Form</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<!-- Latest compiled and minified CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Latest compiled JavaScript -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-	<!----styyle----->
-	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
-
-</head>
-<body>
+@extends('layouts.app')
+@section('content')   
    @include('flash')
-	<!-- @if($errors)
-		{{--dd($errors)--}}
-	
-	@endif -->
+   {{--auth()->user()->id--}}
 	<div class="main-body">
         <form method="post" action="{{route('submit_compelete_form')}}" id="form">
             {{csrf_field()}}
 		<div class="container">
 				<div class="heading-top">
-					<!-- <img src="img/logo.jpg" class="float-left d-inline-block"> --><h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
+				<img src="{{asset('img/logo.jpg')}}" class="float-start"><h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
 				</div>
 				<div class="table-responsive-md mt-4">
 					<table class="table-bordered table-sm">
@@ -306,7 +289,7 @@
 		</div>
 		<div class="container mt-5">
 			<div class="heading-top">
-				<h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
+			<img src="{{asset('img/logo.jpg')}}" class="float-start"><h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
 			</div>
 			<div class="table-responsive-md mt-4">
 				<table class="table-bordered table-sm" width="100%">
@@ -324,7 +307,13 @@
 				    <tbody>
 				      <tr>
 				        <td>Affiliate Name:</td>
-				        <td colspan="5"><input type="text" class="border-0" name="annual_report_affiliate_name" /></td>
+				        <td colspan="5"><input type="text" class="border-0" name="annual_report_affiliate_name" />
+							@if($errors->has('annual_report_affiliate_name'))
+								<span class="help-block text-danger">
+									<strong>{{ $errors->first('annual_report_affiliate_name') }}</strong>
+								</span>
+							@endif
+						</td>
 				        
 				      </tr>
 				      <tr>
@@ -338,11 +327,7 @@
 								<div class="form-check">
 								  <label class="form-check-label">
 								    <input type="checkbox" class="form-check-input" value="yes" name="dogs_nsw">
-									@if ($errors->has('balance_sheet'))
-										<span class="help-block text-danger">
-											<strong>{{ $errors->first('balance_sheet') }}</strong>
-										</span>
-                                    @endif
+									
 								  </label>
 								</div>
 							</td>
@@ -351,11 +336,7 @@
 								<div class="form-check">
 								  <label class="form-check-label">
 								    <input type="checkbox" class="form-check-input" value="yes" name="annual_report_other" >
-									@if ($errors->has('balance_sheet'))
-										<span class="help-block text-danger">
-											<strong>{{ $errors->first('balance_sheet') }}</strong>
-										</span>
-                                    @endif
+									
 								  </label>
 								</div>
 							</td>
@@ -365,11 +346,7 @@
 				       <tr>
 					      <td colspan="5">The following Office Bearers were elected at the Annual General Meeting held on:</td>
 					      <td><input type="date" name="annual_report_general_meeting">
-						 			@if ($errors->has('balance_sheet'))
-										<span class="help-block text-danger">
-											<strong>{{ $errors->first('balance_sheet') }}</strong>
-										</span>
-                                    @endif
+						 		
 						</td>
 				      </tr>
 				    </tbody>
@@ -450,39 +427,39 @@
 						</td>
 					    <td colspan="2"> 
 							Membership No:
-							 <input type="text" class="border-0" type="president_membership_no">
+							 <input type="text" class="border-0" name="president_membership_no">
 						</td>
 				      </tr>
 						<tr>
 					      	<td colspan="4"> 
 								Address:
-								 <input type="text" class="border-0" type="president_address">
+								 <input type="text" class="border-0" name="president_address">
 							</td>
 						</tr>
 						<tr>
 					      	<td> 
 								 State:
-								 <input type="text" class="border-0" type="president_state">
+								 <input type="text" class="border-0" name="president_state">
 							</td>
 						    <td colspan="2"> 
 								Postcode:
-								 <input type="text" class="border-0" type="president_postcode">
+								 <input type="text" class="border-0" name="president_postcode">
 							</td>
 							<td>Country (if overseas):
-								<input type="text" class="border-0" type="president_country">
+								<input type="text" class="border-0" name="president_country">
 							</td>
 					     </tr>
 					     <tr>
 					      	<td> 
 								 Phone (H):
-								 <input type="text" class="border-0" type="president_phone_h">
+								 <input type="text" class="border-0" name="president_phone_h">
 							</td>
 						    <td colspan="2"> 
 								Phone (B):
-								 <input type="text" class="border-0" type="president_phone_b">
+								 <input type="text" class="border-0" name="president_phone_b">
 							</td>
 							<td>Phone (M):
-								<input type="text" class="border-0" type="president_phone_m">
+								<input type="text" class="border-0" name="president_phone_m">
 							</td>
 					     </tr>
 				    </tbody>
@@ -759,54 +736,54 @@
 				      <tr>
 				      	<td colspan="2"> 
 							 First Name:
-							 <input type="text" class="border-0" name="2vp_f_name">
+							 <input type="text" class="border-0" name=" s_vp_f_name">
 						</td>
 					      
 					    <td colspan="2"> 
 							Last Name:
-							 <input type="text" class="border-0" name="2vp_l_name">
+							 <input type="text" class="border-0" name=" s_vp_l_name">
 						</td>
 				      </tr>
 				      <tr>
 				      	<td colspan="2"> 
 							 Email:
-							 <input type="email" class="border-0" name="2vp_email">
+							 <input type="email" class="border-0" name=" s_vp_email">
 						</td>
 					    <td colspan="2"> 
 							Membership No:
-							 <input type="text" class="border-0" name="2vp_membership_no">
+							 <input type="text" class="border-0" name=" s_vp_membership_no">
 						</td>
 				      </tr>
 						<tr>
 					      	<td colspan="4"> 
 								Address:
-								 <input type="text" class="border-0" name="2vp_address">
+								 <input type="text" class="border-0" name=" s_vp_address">
 							</td>
 						</tr>
 						<tr>
 					      	<td> 
 								 State:
-								 <input type="text" class="border-0" name="2vp_state">
+								 <input type="text" class="border-0" name=" s_vp_state">
 							</td>
 						    <td colspan="2"> 
 								Postcode:
-								 <input type="text" class="border-0" name="2vp_postcode">
+								 <input type="text" class="border-0" name=" s_vp_postcode">
 							</td>
 							<td>Country (if overseas):
-								<input type="text" class="border-0" name="2vp_country">
+								<input type="text" class="border-0" name=" s_vp_country">
 							</td>
 					     </tr>
 					     <tr>
 					      	<td> 
 								 Phone (H):
-								 <input type="text" class="border-0" name="2vp_phone_h">
+								 <input type="text" class="border-0" name=" s_vp_phone_h">
 							</td>
 						    <td colspan="2"> 
 								Phone (B):
-								 <input type="text" class="border-0" name="2vp_phone_b">
+								 <input type="text" class="border-0" name=" s_vp_phone_b">
 							</td>
 							<td>Phone (M):
-								<input type="text" class="border-0" name="2vp_phone_m">
+								<input type="text" class="border-0" name=" s_vp_phone_m">
 							</td>
 					     </tr>
 				    </tbody>
@@ -923,7 +900,7 @@
 		</div>
 		<div class="container mt-4">
 			<div class="heading-top">
-				<h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
+			<img src="{{asset('img/logo.jpg')}}" class="float-start"><h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
 			</div>
 			<div class="table-responsive-md mt-4">
 				<table class="table-bordered table-sm" width="100%">
@@ -1228,7 +1205,7 @@
 		</div>
 		<div class="container mt-4">
 			<div class="heading-top">
-				<img src="img/logo.jpg" class="float-start"><h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
+				<img src="{{asset('img/logo.jpg')}}" class="float-start"><h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
 			</div>
 			<div class="table-responsive-md mt-2">
 
@@ -1764,7 +1741,7 @@
 
 		<div class="container mt-4">
 			<div class="heading-top">
-				<img src="img/logo.jpg" class="float-start"><h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
+			<img src="{{asset('img/logo.jpg')}}" class="float-start"><h4>DOGS NSW AFFILIATE ANNUAL REPORT</h4>
 			</div>
 			<div class="table-responsive-md mt-2">
 				<table class="table-bordered table-sm" width="100%">
@@ -2058,8 +2035,8 @@
 		</div>
         </form>
 	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	@endsection 
+	@push('page_js')
 	<script>
 		$(document).ready(function(){
 			$('#incomplete_form').on('click',function(){
@@ -2075,7 +2052,7 @@
 					success: function(response){
 						if(response['status']){
 							alert('Form Saved.');
-							window.location.reload();
+							window.location.href ="{{route('home')}}";
 						}else{
 							alert('Something went wrong.');
 							window.location.reload();
@@ -2085,5 +2062,4 @@
 			});
 		});
 	</script>
-</body>
-</html>
+	@endpush
