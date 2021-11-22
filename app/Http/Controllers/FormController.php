@@ -41,6 +41,14 @@ class FormController extends Controller
             $annual_report->president_f_name = isset($request->president_f_name) ? $request->president_f_name : '';
             $annual_report->president_l_name = isset($request->president_l_name) ? $request->president_l_name : '';
             $annual_report->president_email = isset($request->president_email) ? $request->president_email : '';
+            $annual_report->president_membership_no = isset($request->president_membership_no) ? $request->president_membership_no : '';
+            $annual_report->president_address = isset($request->president_address) ? $request->president_address : '';
+            $annual_report->president_state = isset($request->president_state) ? $request->president_state : '';
+            $annual_report->president_postcode = isset($request->president_postcode) ? $request->president_postcode : '';
+            $annual_report->president_country = isset($request->president_country) ? $request->president_country : '';
+            $annual_report->president_phone_h = isset($request->president_phone_h) ? $request->president_phone_h : '';
+            $annual_report->president_phone_b = isset($request->president_phone_b) ? $request->president_phone_b : '';
+            $annual_report->president_phone_m = isset($request->president_phone_m) ? $request->president_phone_m : '';
             $annual_report->secretary_name_title = isset($request->secretary_name_title) ? $request->secretary_name_title : '';
             $annual_report->secretary_f_name = isset($request->secretary_f_name) ? $request->secretary_f_name : '';
             $annual_report->secretary_l_name = isset($request->secretary_l_name) ? $request->secretary_l_name : '';
@@ -390,7 +398,7 @@ class FormController extends Controller
                 $annual_report = new AnnualReport;
 
 
-                $annual_report->user_id = auth()->user()->id;
+            $annual_report->user_id = auth()->user()->id;
             $annual_report->anural_report_cover_sheet = isset($request->anural_report_cover_sheet) ?$request->anural_report_cover_sheet : '';
 
             $annual_report->profit_loss_smt = isset($request->profit_loss_smt) ? $request->profit_loss_smt : '';
@@ -405,6 +413,14 @@ class FormController extends Controller
             $annual_report->president_f_name = isset($request->president_f_name) ? $request->president_f_name : '';
             $annual_report->president_l_name = isset($request->president_l_name) ? $request->president_l_name : '';
             $annual_report->president_email = isset($request->president_email) ? $request->president_email : '';
+            $annual_report->president_membership_no = isset($request->president_membership_no) ? $request->president_membership_no : '';
+            $annual_report->president_address = isset($request->president_address) ? $request->president_address : '';
+            $annual_report->president_state = isset($request->president_state) ? $request->president_state : '';
+            $annual_report->president_postcode = isset($request->president_postcode) ? $request->president_postcode : '';
+            $annual_report->president_country = isset($request->president_country) ? $request->president_country : '';
+            $annual_report->president_phone_h = isset($request->president_phone_h) ? $request->president_phone_h : '';
+            $annual_report->president_phone_b = isset($request->president_phone_b) ? $request->president_phone_b : '';
+            $annual_report->president_phone_m = isset($request->president_phone_m) ? $request->president_phone_m : '';
             $annual_report->secretary_name_title = isset($request->secretary_name_title) ? $request->secretary_name_title : '';
             $annual_report->secretary_f_name = isset($request->secretary_f_name) ? $request->secretary_f_name : '';
             $annual_report->secretary_l_name = isset($request->secretary_l_name) ? $request->secretary_l_name : '';
@@ -786,6 +802,14 @@ class FormController extends Controller
             $annual_report->president_f_name = isset($request->president_f_name) ? $request->president_f_name : '';
             $annual_report->president_l_name = isset($request->president_l_name) ? $request->president_l_name : '';
             $annual_report->president_email = isset($request->president_email) ? $request->president_email : '';
+            $annual_report->president_membership_no = isset($request->president_membership_no) ? $request->president_membership_no : '';
+            $annual_report->president_address = isset($request->president_address) ? $request->president_address : '';
+            $annual_report->president_state = isset($request->president_state) ? $request->president_state : '';
+            $annual_report->president_postcode = isset($request->president_postcode) ? $request->president_postcode : '';
+            $annual_report->president_country = isset($request->president_country) ? $request->president_country : '';
+            $annual_report->president_phone_h = isset($request->president_phone_h) ? $request->president_phone_h : '';
+            $annual_report->president_phone_b = isset($request->president_phone_b) ? $request->president_phone_b : '';
+            $annual_report->president_phone_m = isset($request->president_phone_m) ? $request->president_phone_m : '';
             $annual_report->secretary_name_title = isset($request->secretary_name_title) ? $request->secretary_name_title : '';
             $annual_report->secretary_f_name = isset($request->secretary_f_name) ? $request->secretary_f_name : '';
             $annual_report->secretary_l_name = isset($request->secretary_l_name) ? $request->secretary_l_name : '';

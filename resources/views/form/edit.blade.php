@@ -327,7 +327,7 @@
 						     <td class="text-center">
 								<div class="form-check">
 								  <label class="form-check-label">
-								    <input type="checkbox" class="form-check-input" value="yes" name="dogs_nsw" {{isset($form_details->dogs_nsw) ? 'checked':''}}>
+								    <input type="checkbox" class="form-check-input" value="yes" name="dogs_nsw" {{$form_details->dogs_nsw ? 'checked':''}}>
 									
 								  </label>
 								</div>
@@ -336,7 +336,7 @@
 							 <td class="text-center">
 								<div class="form-check">
 								  <label class="form-check-label">
-								    <input type="checkbox" class="form-check-input" value="yes" name="annual_report_other" {{isset($form_details->annual_report_other) ? 'checked':''}}>
+								    <input type="checkbox" class="form-check-input" value="yes" name="annual_report_other" {{$form_details->annual_report_other ? 'checked':''}}>
 									
 								  </label>
 								</div>
@@ -931,7 +931,7 @@
 				        <td class="text-center">
 							<div class="form-check">
 							  <label class="form-check-label">
-							    <input type="checkbox" class="form-check-input" value="yes" name="financial_report_blns_sheet" {{isset($form_details->financial_report_blns_sheet) ? 'checked':''}}>
+							    <input type="checkbox" class="form-check-input" value="yes" name="financial_report_blns_sheet" {{$form_details->financial_report_blns_sheet ? 'checked':''}}>
 							  </label>
 							</div>
 						</td>
@@ -942,7 +942,7 @@
 				        <td class="text-center">
 							<div class="form-check">
 							  <label class="form-check-label">
-							    <input type="checkbox" class="form-check-input" value="yes" name="annual_general_meeting" {{isset($form_details->annual_general_meeting) ? 'checked':''}}>
+							    <input type="checkbox" class="form-check-input" value="yes" name="annual_general_meeting" {{$form_details->annual_general_meeting ? 'checked':''}}>
 							  </label>
 							</div>
 						</td>
@@ -953,7 +953,7 @@
 				        <td class="text-center">
 							<div class="form-check">
 							  <label class="form-check-label">
-							    <input type="checkbox" class="form-check-input" value="yes" name="secretary_report" {{isset($form_details->secretary_report) ? 'checked':''}}>
+							    <input type="checkbox" class="form-check-input" value="yes" name="secretary_report" {{$form_details->secretary_report ? 'checked':''}}>
 							  </label>
 							</div>
 						</td>
@@ -964,7 +964,7 @@
 				        <td class="text-center">
 							<div class="form-check">
 							  <label class="form-check-label">
-							    <input type="checkbox" class="form-check-input" value="yes" name="signed_by_president_secretary" {{isset($form_details->signed_by_president_secretary) ? 'checked':''}}>
+							    <input type="checkbox" class="form-check-input" value="yes" name="signed_by_president_secretary" {{$form_details->signed_by_president_secretary ? 'checked':''}}>
 							  </label>
 							</div>
 						</td>
@@ -974,7 +974,7 @@
 				        <td class="text-center">
 							<div class="form-check">
 							  <label class="form-check-label">
-							    <input type="checkbox" class="form-check-input" value="yes" name="info_consider_necessary" {{isset($form_details->info_consider_necessary) ? 'checked':''}}>
+							    <input type="checkbox" class="form-check-input" value="yes" name="info_consider_necessary" {{$form_details->info_consider_necessary ? 'checked':''}}>
 							  </label>
 							</div>
 						</td>
